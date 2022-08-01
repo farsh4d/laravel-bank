@@ -14,7 +14,7 @@ use Farsh4d\Bank\Managers\BankManager;
 class BankServiceProvider extends ServiceProvider {
 
     public function register() {
-        $configPath = __DIR__ . '/../config/bank.php';
+        $configPath = __DIR__ . '/../../config/bank.php';
         $this->mergeConfigFrom($configPath, 'bank');
 
         $this->registerBank();
@@ -29,30 +29,11 @@ class BankServiceProvider extends ServiceProvider {
     }
 
     public function boot() {
-        $configPath = __DIR__ . '/../config/bank.php';
+        $configPath = __DIR__ . '/../../config/bank.php';
         $this->publishes([$configPath => $this->getConfigPath()], 'config');
 
-        $this->loadViewsFrom(__DIR__ . '/Resources/views', 'bank');
+        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'bank');
         
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../../database/migrations');
     }
-
-    /**
-     * Get the config path
-     *
-     * @return string
-     */
-    protected function getConfigPath() {
-        return config_path('bank.php');
-    }
-
-    /**
-     * Publish the config file
-     *
-     * @param  string $configPath
-     */
-    protected function publishConfig($configPath) {
-        $this->publishes([$configPath => config_path('bank.php')], 'config');
-    }
-
 }
