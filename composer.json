@@ -1,0 +1,42 @@
+{
+    "name": "farsh4d/laravel-bank",
+    "keywords": [
+        "laravel",
+        "bank",
+        "ipg",
+        "payment",
+        "gateway",
+        "payment gateway",
+        "internet payment gateway"
+    ],
+    "type": "library",
+    "description": "A package to connect to any IPG to make a payment",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Farshad Haassani",
+            "email": "farshad.haassani73@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-soap": "*",
+        "ext-curl": "*",
+        "laravel/framework": "^5.6|^6|^7|^8|^9",
+        "hekmatinasser/verta": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Farsh4d\\Bank\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Farsh4d\\Bank\\Providers\\BankServiceProvider"
+            ],
+            "aliases": {
+                "Bank": "Farsh4d\\Bank\\Facades\\Bank"
+            }
+        }
+    }
+}
