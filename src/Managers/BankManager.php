@@ -32,11 +32,11 @@ class BankManager extends Manager implements Factory
      */
     protected function buildDriver($method)
     {
-        $driver = $this->getCalledDriverName($method);
-        $config = $this->app['config']['bank.' . $driver];
-        $driver = '\\Farsh4d\\Bank\\Drivers\\' . ucfirst($driver);
+        $driverName = $this->getCalledDriverName($method);
+        $config = $this->app['config']['bank.' . $driverName];
+        $driver = '\\Farsh4d\\Bank\\Drivers\\' . ucfirst($driverName);
         
-        return new $driver($this->app, $config, $driver);
+        return new $driver($this->app, $config, $driverName);
     }
 
     private function getCalledDriverName($method)
