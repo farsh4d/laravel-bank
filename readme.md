@@ -1,4 +1,7 @@
 ## Laravel Bank
+[![Packagist License](https://poser.pugx.org/farsh4d/laravel-bank/license.png)](http://choosealicense.com/licenses/mit/)
+[![Latest Stable Version](https://poser.pugx.org/farsh4d/laravel-bank/version.png)](https://packagist.org/packages/farsh4d/laravel-bank)
+[![Total Downloads](https://poser.pugx.org/farsh4d/laravel-bank/d/total.png)](https://packagist.org/packages/farsh4d/laravel-bank)
 
 This is a package to connect to any Internet Payment Gateways.</br>
 This package now only supports `Mellat` IPG for now but we are developing other IPGs ASAP.
